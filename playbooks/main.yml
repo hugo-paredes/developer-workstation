@@ -6,6 +6,8 @@
   vars_files:
     - vars/defaults.yml
     - vars/docker.yml
+    - vars/azure_cli.yml
 
   roles:
     - role: docker
+    - role: azure/cli
