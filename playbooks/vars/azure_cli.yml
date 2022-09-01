@@ -1,6 +1,5 @@
 ---
 az_cli_dependencies:
-  - install
   - ca-certificates
   - curl
   - apt-transport-https

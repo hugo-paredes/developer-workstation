@@ -1,8 +1,4 @@
 ---
-- name: Get systems architecture
-  command: dpkg --print-architecture
-  register: arch
-
 - name: Install the application dependencies (Debian)
   apt:
     pkg: "{{ az_cli_dependencies }}"
@@ -17,7 +13,7 @@
 
 - name: Create the APT repository (Debian)
   apt_repository:
-    repo: "deb [arch={{ arch.stdout }}] https://packages.microsoft.com/repos/azure-cli/ {{ansible_distribution_release}} main"
+    repo: "deb [arch=arm64] https://packages.microsoft.com/repos/azure-cli/ {{ ansible_distribution_release }} main"
     filename: "{{ azure_package_name }}"
     state: present
 
