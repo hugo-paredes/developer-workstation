@@ -4,7 +4,8 @@
   become: true
 
   vars_files:
-    - defaults/main.yml
+    - vars/defaults.yml
+    - vars/docker.yml
 
   roles:
     - role: docker
