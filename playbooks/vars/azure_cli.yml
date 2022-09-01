@@ -1,4 +1,5 @@
 ---
+azure_package_name: azure-cli
 az_cli_dependencies:
   - ca-certificates
   - curl
