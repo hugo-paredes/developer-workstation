@@ -1,0 +1,10 @@
+---
+- name: Download docker-compose and put it in the user's local binary folder.
+  get_url:
+    url: "https://github.com/docker/compose/releases/download/{{ docker_compose_version }}/docker-compose-linux-armv6"
+    dest: "{{ docker_compose_file }}"
+
+- name: Change docker-compose mode to allow it to be executed.
+  file:
+    path: "{{ docker_compose_file }}"
+    mode: 0755

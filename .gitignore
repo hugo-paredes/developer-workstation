@@ -1,0 +1,5 @@
+# Ansible Vault password
+**/ansible_vault_password.txt
+
+# Environments
+**/.env

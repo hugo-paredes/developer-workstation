@@ -1,0 +1,41 @@
+---
+- name: Install Docker dependencies.
+  apt:
+    pkg: "{{ docker_package_dependencies }}"
+    state: present
+    update_cache: yes
+    cache_valid_time: 3600
+
+- name: Add the Docker PGP key.
+  apt_key:
+    url: "{{ docker_pgp_key_url }}"
+    state: present
+
+- name: Add Docker repository to apt.
+  apt_repository:
+    repo: "deb {{ docker_apt_repository_url }} bionic stable"
+    state: present
+
+- name: Install Docker packages.
+  apt:
+    pkg: "{{ docker_installation_packages }}"
+    state: present
+    update_cache: yes
+
+- name: Add 'docker' group.
+  group:
+    name: "{{ docker_group }}"
+    state: present
+
+- name: Add user to Docker group.
+  user:
+    name: "{{ default_username }}"
+    groups:
+      - "{{ docker_group }}"
+    append: yes
+
+- name: Ensure Docker service is up and running.
+  service:
+    name: "{{ docker_service }}"
+    state: started
+    enabled: yes

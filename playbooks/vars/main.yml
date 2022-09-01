@@ -1,0 +1,14 @@
+---
+package_pre_requisites:
+  - ntp
+  - neovim
+  - ca-certificates
+  - curl
+  - gnupg
+  - lsb-release
+  - apt-transport-https
+
+default_username: hugo
+default_user_groups: []
+
+hostname: homeserver

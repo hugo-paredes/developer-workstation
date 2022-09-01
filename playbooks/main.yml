@@ -1,0 +1,12 @@
+---
+- name: Install work workstation
+  hosts: all
+  become: true
+
+  vars_files:
+    - defaults/main.yml
+
+  roles:
+    - role: system
+      tags:
+        - system
