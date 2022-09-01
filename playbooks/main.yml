@@ -7,6 +7,4 @@
     - defaults/main.yml
 
   roles:
-    - role: system
-      tags:
-        - system
+    - role: docker
