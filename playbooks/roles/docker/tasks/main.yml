@@ -8,12 +8,12 @@
 
 - name: Add the Docker PGP key.
   apt_key:
-    url: "{{ docker_pgp_key_url }}"
+    url: "https://download.docker.com/linux/{{ distro }}/gpg"
     state: present
 
 - name: Add Docker repository to apt.
   apt_repository:
-    repo: "deb {{ docker_apt_repository_url }} bullseye stable"
+    repo: "deb https://download.docker.com/linux/{{ distro }} bullseye stable"
     state: present
 
 - name: Install Docker packages.

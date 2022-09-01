@@ -11,7 +11,5 @@ docker_installation_packages:
   - containerd.io
   - docker-compose-plugin
 
-docker_pgp_key_url: https://download.docker.com/linux/ubuntu/gpg
-docker_apt_repository_url: https://download.docker.com/linux/ubuntu
 docker_group: docker
 docker_service: docker

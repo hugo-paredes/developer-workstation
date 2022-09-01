@@ -1,4 +1,5 @@
 ---
+distro: debian
 package_pre_requisites:
   - ntp
   - neovim
