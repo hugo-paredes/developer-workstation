@@ -1,0 +1,28 @@
+---
+- name: Get systems architecture
+  command: dpkg --print-architecture
+  register: arch
+
+- name: Install the application dependencies (Debian)
+  apt:
+    pkg: "{{ az_cli_dependencies }}"
+    state: present
+    update_cache: yes
+    cache_valid_time: 3600
+
+- name: Import the APT repo key (Debian)
+  apt_key:
+    keyserver: "{{ az_cli_apt_key_server }}"
+    id: "{{ az_cli_apt_key_server }}"
+
+- name: Create the APT repository (Debian)
+  apt_repository:
+    repo: "deb [arch={{ arch.stdout }}] https://packages.microsoft.com/repos/azure-cli/ {{ansible_distribution_release}} main"
+    filename: "{{ azure_package_name }}"
+    state: present
+
+- name: Install the application package (Debian)
+  apt:
+    pkg: "{{ docker_installation_packages }}"
+    state: present
+    update_cache: yes

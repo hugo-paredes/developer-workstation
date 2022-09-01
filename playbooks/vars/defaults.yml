@@ -1,5 +1,6 @@
 ---
 distro: debian
+lsb_release: bullseye
 package_pre_requisites:
   - ntp
   - neovim
