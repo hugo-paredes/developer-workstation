@@ -1,5 +1,5 @@
 ---
-- name: Install work workstation
+- name: Provision developer workstation
   hosts: all
   become: true
 
