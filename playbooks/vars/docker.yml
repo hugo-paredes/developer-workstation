@@ -5,7 +5,7 @@ docker_dependencies:
   - gnupg
   - lsb-release
 
-docker_installation_packages:
+docker_packages_names:
   - docker-ce
   - docker-ce-cli
   - containerd.io

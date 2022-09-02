@@ -1,0 +1,22 @@
+---
+- name: Check if application path exists
+  ansible.builtin.stat:
+    path: /usr/bin/code
+  register: app_exists
+
+- name: Download the application installation file ({{ ansible_distribution }})
+  ansible.builtin.get_url:
+    url: https://update.code.visualstudio.com/latest/linux-deb-x64/stable
+    dest: /tmp/vscode-pakcage.deb
+  when: not app_exists.stat.exists
+
+- name: Install the application .deb package ({{ ansible_distribution }})
+  ansible.builtin.apt:
+    deb: /tmp/vscode-pakcage.deb
+  when: not app_exists.stat.exists
+
+- name: Remove application .deb package ({{ ansible_distribution }})
+  ansible.builtin.file:
+    path: /tmp/vscode-pakcage.deb
+    state: absent
+  when: not app_exists.stat.exists

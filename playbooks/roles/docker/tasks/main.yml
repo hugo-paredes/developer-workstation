@@ -1,24 +1,24 @@
 ---
-- name: Install Docker dependencies.
+- name: Install the application dependencies ({{ ansible_distribution }})
   apt:
     pkg: "{{ docker_dependencies }}"
     state: present
     update_cache: yes
     cache_valid_time: 3600
 
-- name: Add the Docker PGP key.
+- name: Import the APT repo key ({{ ansible_distribution }})
   apt_key:
     url: "https://download.docker.com/linux/{{ distro }}/gpg"
     state: present
 
-- name: Add Docker repository to apt.
+- name: Create the APT repository ({{ ansible_distribution }})
   apt_repository:
     repo: "deb https://download.docker.com/linux/{{ distro }} {{ lsb_release }} stable"
     state: present
 
-- name: Install Docker packages.
+- name: Install the application package ({{ ansible_distribution }})
   apt:
-    pkg: "{{ docker_installation_packages }}"
+    pkg: "{{ docker_packages_names }}"
     state: present
     update_cache: yes
 

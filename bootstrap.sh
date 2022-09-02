@@ -14,3 +14,4 @@ sudo apt update && sudo apt upgrade -y
 sudo apt install -y python3-pip git
 # Install ansible
 pip install ansible
+sudo apt install -y ansible-lint yamllint

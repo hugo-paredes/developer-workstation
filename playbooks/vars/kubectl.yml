@@ -1,0 +1,5 @@
+---
+kubectl_package: kubectl
+kubectl_dependencies:
+  - ca-certificates
+  - curl
