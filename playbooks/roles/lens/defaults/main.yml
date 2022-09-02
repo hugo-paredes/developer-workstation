@@ -1,0 +1,4 @@
+---
+lens_installation_path: /usr/bin/lens
+lens_package_deb_url: https://api.k8slens.dev/binaries/Lens-5.4.6-latest.20220421.1.amd64.deb
+lenst_deb_package_destination: /tmp/lens.deb

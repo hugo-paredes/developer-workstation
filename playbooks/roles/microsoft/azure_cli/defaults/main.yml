@@ -1,0 +1,14 @@
+---
+az_cli_package_name: azure-cli
+az_cli_dependencies:
+  - ca-certificates
+  - curl
+  - apt-transport-https
+  - lsb-release
+  - gnupg
+
+az_cli_installation_packages:
+  - azure-cli
+
+az_cli_apt_key_server: packages.microsoft.com
+az_cli_apt_key_id: 52E16F86FEE04B979B07E28DB02C46DF417A0893

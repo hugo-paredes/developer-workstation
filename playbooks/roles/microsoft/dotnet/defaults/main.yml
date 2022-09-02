@@ -1,0 +1,5 @@
+---
+dotnet_package: dotnet-sdk-6.0
+dotnet_installation_path: /usr/bin/dotnet
+dotnet_deb_pakcage_url: https://packages.microsoft.com/config/debian/11/packages-microsoft-prod.deb
+dotnet_deb_package_destination: /tmp/dotnet-pakcage.deb

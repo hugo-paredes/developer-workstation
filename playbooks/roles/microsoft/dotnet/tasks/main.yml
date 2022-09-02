@@ -1,0 +1,28 @@
+---
+- name: Check if application path exists
+  ansible.builtin.stat:
+    path: "{{ dotnet_installation_path }}"
+  register: app_exists
+
+- name: Download the application installation file ({{ ansible_distribution }})
+  ansible.builtin.get_url:
+    url: "{{ dotnet_deb_pakcage_url }}"
+    dest: "{{ dotnet_deb_package_destination }}"
+  when: not app_exists.stat.exists
+
+- name: Install the application package signing key ({{ ansible_distribution }})
+  ansible.builtin.apt:
+    deb: "{{ dotnet_deb_package_destination }}"
+  when: not app_exists.stat.exists
+
+- name: Install the application package ({{ ansible_distribution }})
+  ansible.builtin.apt:
+    pkg: "{{ dotnet_package }}"
+    state: present
+    update_cache: yes
+
+- name: Remove application .deb package ({{ ansible_distribution }})
+  ansible.builtin.file:
+    path: "{{ dotnet_deb_package_destination }}"
+    state: absent
+  when: not app_exists.stat.exists

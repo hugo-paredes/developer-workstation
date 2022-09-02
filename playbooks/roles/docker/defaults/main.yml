@@ -1,0 +1,15 @@
+---
+docker_dependencies:
+  - ca-certificates
+  - curl
+  - gnupg
+  - lsb-release
+
+docker_packages_names:
+  - docker-ce
+  - docker-ce-cli
+  - containerd.io
+  - docker-compose-plugin
+
+docker_group: docker
+docker_service: docker

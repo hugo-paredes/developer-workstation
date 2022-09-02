@@ -4,13 +4,12 @@
   become: true
 
   vars_files:
-    - vars/defaults.yml
-    - vars/docker.yml
-    - vars/kubectl.yml
-    - vars/azure_cli.yml
+    - defaults/main.yml
 
   roles:
     - role: docker
     - role: kubectl
-    - role: microsoft/azure/cli
-    - role: microsoft/ide/vscode
+    - role: lens
+    - role: microsoft/dotnet
+    - role: microsoft/azure_cli
+    - role: microsoft/vscode
