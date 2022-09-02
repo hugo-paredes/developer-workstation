@@ -14,7 +14,7 @@
 Open the terminal and run the following command:
 
 ```shell
-curl -sL https://raw.githubusercontent.com/hugo-paredes/developer-workstation/main/bootstrap.sh | sudo bash
+curl -sL https://raw.githubusercontent.com/hugo-paredes/developer-workstation/main/bootstrap.sh | sudo bash -s -- $USER
 ```
 
 > **NOTE:** The scripts needs to run with elevated privileges because it needs to install dependencies.
