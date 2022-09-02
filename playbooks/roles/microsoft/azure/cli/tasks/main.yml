@@ -1,34 +1,34 @@
 ---
 - name: Get the system architecture
-  shell: dpkg --print-architecture
+  ansible.builtin.shell: dpkg --print-architecture
   register: system_arch
   changed_when: "'changed' in system_arch.stdout"
 
 - name: Print system architecture
-  debug:
+  ansible.builtin.debug:
     msg: "System architecture is: {{ system_arch.stdout }}"
 
 - name: Install the application dependencies ({{ ansible_distribution }})
-  apt:
+  ansible.builtin.apt:
     pkg: "{{ az_cli_dependencies }}"
     state: present
     update_cache: yes
     cache_valid_time: 3600
 
 - name: Import the APT repo key ({{ ansible_distribution }})
-  apt_key:
+  ansible.builtin.apt_key:
     url: "https://packages.microsoft.com/keys/microsoft.asc"
     state: present
 
 - name: Create the APT repository ({{ ansible_distribution }})
-  apt_repository:
+  ansible.builtin.apt_repository:
     repo: "deb [arch={{ system_arch }}] https://packages.microsoft.com/repos/azure-cli/ {{ ansible_distribution_release }} main"
-    dest: /etc/apt/trusted.gpg.d/microsoft.gpg
+    # dest: /etc/apt/trusted.gpg.d/microsoft.gpg
     state: present
   changed_when: "'changed' in system_arch.stdout"
 
 - name: Install the application package ({{ ansible_distribution }})
-  apt:
+  ansible.builtin.apt:
     pkg: "{{ az_cli_package_name }}"
     state: present
     update_cache: yes
