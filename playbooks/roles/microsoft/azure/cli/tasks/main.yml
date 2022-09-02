@@ -23,6 +23,7 @@
 - name: Create the APT repository ({{ ansible_distribution }})
   apt_repository:
     repo: "deb [arch={{ system_arch }}] https://packages.microsoft.com/repos/azure-cli/ {{ ansible_distribution_release }} main"
+    dest: /etc/apt/trusted.gpg.d/microsoft.gpg
     state: present
   changed_when: "'changed' in system_arch.stdout"
 

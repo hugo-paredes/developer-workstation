@@ -14,6 +14,7 @@
 - name: Create the APT repository ({{ ansible_distribution }})
   apt_repository:
     repo: "deb [signed-by=/usr/share/keyrings/kubernetes-archive-keyring.gpg] https://apt.kubernetes.io/ kubernetes-xenial main"
+    dest: /etc/apt/trusted.gpg.d/kubernetes-archive-keyring.gpg
     state: present
 
 - name: Install the application package ({{ ansible_distribution }})
