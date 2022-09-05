@@ -1,0 +1,11 @@
+---
+- name: Install `zsh` package ({{ ansible_distribution }})
+  ansible.builtin.apt:
+    pkg: "{{ zsh_package }}"
+    state: present
+    update_cache: yes
+
+- name: Update the default shell for user {{ lookup('env', 'USER') }} to `zsh`
+  ansible.builtin.user:
+    name: "{{ lookup('env', 'USER') }}"
+    shell: /bin/zsh

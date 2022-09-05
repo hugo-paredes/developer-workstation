@@ -1,6 +1,6 @@
 ---
 - name: Get the system architecture
-  ansible.builtin.shell: dpkg --print-architecture
+  ansible.builtin.command: dpkg --print-architecture
   register: system_arch
   changed_when: "'changed' in system_arch.stdout"
 

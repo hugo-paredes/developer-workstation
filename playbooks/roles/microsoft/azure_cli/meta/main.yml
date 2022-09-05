@@ -1,6 +1,6 @@
 ---
 galaxy_info:
-  role_name: microsoft/azure/cli
+  role_name: microsoft_azure_cli
   author: Hugo Paredes
   description: Install Microsoft Azure CLI
   license: MIT

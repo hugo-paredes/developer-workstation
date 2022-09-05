@@ -1,0 +1,14 @@
+galaxy_info:
+  author: Hugo Paredes
+  description: Install the shell zsh
+
+  license: GPL-2.0-or-later
+
+  min_ansible_version: "2.1"
+
+  platforms:
+    - name: Ubuntu
+      versions:
+        - "yammy"
+
+dependencies: []

@@ -1,6 +1,6 @@
 ---
 galaxy_info:
-  role_name: microsoft/ide/vscode
+  role_name: microsoft_ide_vscode
   author: Hugo Paredes
   description: Install Microsoft Visual Studio Code
   license: MIT
