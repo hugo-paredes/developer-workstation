@@ -9,3 +9,9 @@
   ansible.builtin.apt:
     upgrade: dist
     force_apt_get: yes
+
+- name: Install system's pre-requisites
+  ansible.builtin.apt:
+    pkg: "{{ system_pre_requisites }}"
+    state: latest
+    

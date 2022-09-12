@@ -1,0 +1,14 @@
+---
+- name: Download nodejs installation script
+  ansible.builtin.get_url:
+    url: "{{ nodejs_remote_url_installation_script }}"
+    dest: "{{ nodejs_local_path_installation_script }}"
+    mode: +x
+
+- name: Run nodejs installation script
+  ansible.builtin.script: "{{ nodejs_local_path_installation_script }}"
+
+- name: Install nodejs application
+  ansible.builtin.apt:
+    pkg: "{{ nodejs_package_name }}"
+    state: latest

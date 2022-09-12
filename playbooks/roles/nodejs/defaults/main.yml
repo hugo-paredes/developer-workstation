@@ -1,0 +1,4 @@
+---
+nodejs_package_name: nodejs
+nodejs_remote_url_installation_script: https://deb.nodesource.com/setup_18.x
+nodejs_local_path_installation_script: /tmp/nodejs-install.sh

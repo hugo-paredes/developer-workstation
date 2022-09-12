@@ -10,6 +10,7 @@
     - role: system
     - role: docker
     - role: kubectl
+    # - role: nodejs
     - role: lens
     - role: zsh
     - role: microsoft/dotnet

@@ -4,10 +4,12 @@
 
 ## What's installed
 
-* Docker
-* Kubectl
-* Microsoft Azure CLI
-* Microsoft Visual Studio Code
+* `Docker`
+* `Kubectl`
+* `Lens`
+* `Microsoft Azure CLI`
+* `Microsoft Visual Studio Code`
+* `zsh` (requires manual logout)
 
 ## First time setup
 

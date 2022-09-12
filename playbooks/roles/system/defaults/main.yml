@@ -1,2 +1,5 @@
 ---
-# defaults file for playbooks/roles/system
+system_pre_requisites:
+  - curl
+  - neovim
+  - jq
