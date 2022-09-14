@@ -1,0 +1,5 @@
+---
+terraform_cli_version: "1.2.9"
+terraform_cli_url: "https://releases.hashicorp.com/terraform"
+terraform_cli_url_download_path: "/tmp/terraform.zip"
+terraform_cli_path: /usr/local/bin

@@ -10,6 +10,7 @@
     - role: system
     - role: docker
     - role: kubectl
+    - role: terraform/manual
     # - role: nodejs
     - role: lens
     - role: zsh

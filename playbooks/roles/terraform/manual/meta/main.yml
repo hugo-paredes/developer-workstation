@@ -1,0 +1,17 @@
+galaxy_info:
+  author: Hugo Paredes
+  description: Install terraform's binaries manually
+  company: Allianz
+
+  license: GPL-2.0-or-later
+
+  min_ansible_version: "2.1"
+
+  platforms:
+    - name: Ubuntu
+      versions:
+        - "jammy"
+
+  galaxy_tags: [terraform, install, infrastructure]
+
+dependencies: []

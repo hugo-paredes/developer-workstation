@@ -1,0 +1,6 @@
+---
+- name: Download and unarchives the terraform's binaries
+  ansible.builtin.unarchive:
+    src: "{{ terraform_cli_url }}/{{ terraform_cli_version }}/terraform_{{ terraform_cli_version }}_linux_amd64.zip"
+    dest: "{{ terraform_cli_path }}"
+    remote_src: yes
